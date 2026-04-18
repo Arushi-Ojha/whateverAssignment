@@ -7,7 +7,7 @@ app = Flask(__name__)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Arushi100@",
     database="login_system"
 )
 
@@ -49,6 +49,29 @@ def login():
 def home():
     return render_template("home.html")
 
+# --- ADD THESE NEW ROUTES ---
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/treatment')
+def treatment():
+    return render_template("treatment.html")
+
+@app.route('/doctor')
+def doctor():
+    return render_template("doctor.html")
+
+@app.route('/testimonial')
+def testimonial():
+    return render_template("testimonial.html")
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
+
+# ----------------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
